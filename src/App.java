@@ -30,16 +30,9 @@ public class App extends PApplet {
             }
         }
 
-//        rectangles.forEach(rec -> {
-//            stroke(Rectangle.DEFAULT_COLOR);
-//            fill(Rectangle.DEFAULT_COLOR);
-//            rect(rec.x, rec.y, rec.width, rec.height);
-//        });
-
-        for (Rectangle rec: rectangles) {
-            rec.draw();
+        for (Rectangle rectangle : rectangles) {
+            rectangle.draw();
         }
-
     }
 
 
