@@ -1,16 +1,19 @@
+import processing.core.PApplet;
 import processing.core.PVector;
 
-public class Rectangle {
+public class Rectangle extends PApplet {
+    PApplet parent;
     private static int DEFAULT_WIDTH = 10;
     private static int DEFAULT_HEIGHT = 10;
     static final int DEFAULT_COLOR = 200;
     private int x, y;
     private int width, height;
-    public PVector pos;
+    public PVector pos = new PVector();
 
-    public Rectangle(int x, int y) {
-//        this.pos.x = x;
-//        this.pos.y = y;
+    public Rectangle(PApplet parent, int x, int y) {
+        this.parent = parent;
+//      this.pos.x = x;
+//      this.pos.y = y;
 //
         this.x = x;
         this.y = y;
@@ -18,11 +21,18 @@ public class Rectangle {
         this.height = DEFAULT_HEIGHT;
     }
 
-    public Rectangle(int x, int y, int width, int height) {
+    public Rectangle(PApplet parent, int x, int y, int width, int height) {
+        this.parent = parent;
         this.x = x;
         this.y = y;
         this.width = width;
         this.height = height;
+    }
+
+    public void draw() {
+        parent.stroke(DEFAULT_COLOR);
+        parent.fill(DEFAULT_COLOR);
+        parent.rect(this.x, this.y, this.width, this.height);
     }
 
     public static void increaseSize() {

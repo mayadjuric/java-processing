@@ -3,7 +3,7 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 public class App extends PApplet {
-    ArrayList<Rectangle> rectangles = new ArrayList<Rectangle>();
+    ArrayList<Rectangle> rectangles = new ArrayList<>();
     public void setup() {
         frameRate(30);
     }
@@ -19,7 +19,7 @@ public class App extends PApplet {
 
 
         if (mousePressed) {
-            rectangles.add(new Rectangle(mouseX,mouseY));
+            rectangles.add(new Rectangle(this, mouseX, mouseY));
         }
 
         if (keyPressed) {
@@ -37,9 +37,7 @@ public class App extends PApplet {
 //        });
 
         for (Rectangle rec: rectangles) {
-            stroke(Rectangle.DEFAULT_COLOR);
-            fill(Rectangle.DEFAULT_COLOR);
-            rect(rec.getX(), rec.getY(), rec.getWidth(), rec.getHeight());
+            rec.draw();
         }
 
     }
