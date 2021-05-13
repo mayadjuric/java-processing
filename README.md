@@ -6,7 +6,9 @@ Instead of working inside the processing IDE, you can use your prefered IDE and 
 
 1. Create a new project in your prefered IDE. In this case I'm using IntelliJ IDEA CE.
 
-2. Go to your library settings and add the processing core as an external library. 
+2. Add the processing core to your project's library
+    - Go to `file` -> `project structure`
+    - Go to thee library section and add click the `+` button to add a new library. 
     - On Mac OSX this is located at `/Applications/Processing.app/Contents/Java/Core.jar`
 
 3. Create your main class that extends PApplet (add your import - `import processing.core.PApplet;`)
